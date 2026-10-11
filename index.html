@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentPortal | Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-white text-black md:p-3 p-1">
+
+    <main class="relative md:p-4 p-2 border border-gray-300 rounded-2xl min-h-screen w-full bg-white">
+
+        <nav
+            class="sticky top-0 z-50 flex justify-between items-center  border border-gray-300 rounded-xl px-2 md:px-8 md:py-4 py-2 min-h-16 bg-white/50">
+            <div>
+                <div class="font-bold md:text-2xl text-xl tracking-tight">StudentPortal</div>
+                <div class="text-sm text-gray-600 mt-1">
+                    Your Academic Journey, Simplified.
+                </div>
+            </div>
+
+            <div class="">
+                <img src="/assects/profileLogo.png"
+                    class="w-9 h-9 md:border border-gray-300 p-1 rounded-full object-cover hidden md:block"
+                    alt="profileLogo">
+                <button aria-label="Open navigation menu " id="menuBtn"
+                    class="absolute top-1 right-3 md:hidden block text-2xl">&#9776;</button>
+            </div>
+        </nav>
+
+        <section class="flex flex-col md:flex-row gap-4 my-4 w-full">
+
+
+            <div id="sidebar" class="fixed top-[50%] h-60vh  left-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[40%]  rounded-xl shadow-lg
+            opacity-0 invisible
+            transition-all duration-300 ease-in-out
+            md:static md:translate-x-0 md:translate-y-0
+            md:opacity-100 md:visible  md:shadow-none md:border border-gray-300 md:top-0 flex-col md:flex
+                 md:w-[20%] gap-2 p-3   md:rounded-xl bg-white">
+
+
+                <h2 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-2 py-2">Menu</h2>
+                <h4 class="py-3 rounded-lg px-3 border border-gray-300 font-semibold">▦ &nbsp; Dashboard</h4>
+                <h4 class="py-3 rounded-lg px-3 text-gray-700">▤ &nbsp; My Application</h4>
+                <h4 class="py-3 rounded-lg px-3 text-gray-700">▧ &nbsp; Documents</h4>
+                <h4 class="py-3 rounded-lg px-3 text-gray-700">♙ &nbsp; Profile</h4>
+                <h4 class="py-3  rounded-lg px-3 text-gray-700">↪ &nbsp; Logout</h4>
+
+
+
+
+                <a href="/application.html" class=" rounded-lg text-xl bg-blue-300 text-white px-4 py-3 my-3"> + New
+                    Application</a>
+            </div>
+
+            <div class="right flex flex-col min-w-0 flex-1">
+
+                <div class="welcome flex md:p-5  md:border border-gray-300 rounded-xl bg-white">
+                    <div class="flex flex-col">
+                        <h1 class="font-bold text-2xl">Welcome, Student</h1>
+                        <span class="text-gray-600 text-sm mt-2">Manage your applications and track your academic
+                            journey.</span>
+                    </div>
+                </div>
+
+                <div class="manage w-full my-4">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                        <div class="flex flex-col border border-gray-300 rounded-xl p-5 bg-white">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Total Applications</span>
+                                <span class="border border-gray-300 rounded-lg p-2">▤</span>
+                            </div>
+                            <span class="text-3xl font-bold mt-4">04</span>
+                            <span class="text-xs text-gray-500 mt-1">Applications created</span>
+                        </div>
+
+                        <div class="flex flex-col border border-gray-300 rounded-xl p-5 bg-white">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Draft Applications</span>
+                                <span class="border border-gray-300 rounded-lg p-2">◷</span>
+                            </div>
+                            <span class="text-3xl font-bold mt-4">01</span>
+                            <span class="text-xs text-gray-500 mt-1">Awaiting submission</span>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+
+                        <div class="flex flex-col border border-gray-300 rounded-xl p-5 bg-white">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Submitted Applications</span>
+                                <span class="border border-gray-300 rounded-lg p-2">✓</span>
+                            </div>
+                            <span class="text-3xl font-bold mt-4">02</span>
+                            <span class="text-xs text-gray-500 mt-1">Successfully submitted</span>
+                        </div>
+
+                        <div class="flex flex-col border border-gray-300 rounded-xl p-5 bg-white">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Profile Completion</span>
+                                <span class="border border-gray-300 rounded-lg p-2">◉</span>
+                            </div>
+                            <span class="text-3xl font-bold mt-4">80%</span>
+                            <div class="w-full border border-gray-300 rounded-full h-2 mt-3">
+                                <div class="bg-gray-700 rounded-full h-full w-4/5"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="recent border border-gray-300 rounded-xl overflow-hidden bg-white">
+
+                    <div
+                        class="p-5 border-b border-gray-300 flex flex-col sm:flex-row gap-3 sm:items-cente justify-between items-center">
+                        <div>
+                            <h1 class="font-bold text-lg">Recent Applications</h1>
+                            <p class="text-sm text-gray-600 mt-1">Track your latest application status.</p>
+                        </div>
+                        <span class="text-sm font-semibold">View all →</span>
+                    </div>
+
+                    <div class="md:p-5 p-2 flex flex-col gap-4">
+
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-lg border border-gray-200">
+                            <div>
+                                <h3 class="font-semibold">Student Registration</h3>
+                                <p class="text-xs text-gray-500 mt-1">APP-2026-001</p>
+                            </div>
+                            <span
+                                class="text-xs font-semibold border border-gray-300 px-3 py-2 rounded-full w-fit">Draft</span>
+                        </div>
+
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-lg border border-gray-200">
+                            <div>
+                                <h3 class="font-semibold">Scholarship Application</h3>
+                                <p class="text-xs text-gray-500 mt-1">APP-2026-002</p>
+                            </div>
+                            <span
+                                class="text-xs font-semibold border border-gray-300 px-3 py-2 rounded-full w-fit">Submitted</span>
+                        </div>
+
+                        <div
+                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-lg border border-gray-200">
+                            <div>
+                                <h3 class="font-semibold">Course Enrollment</h3>
+                                <p class="text-xs text-gray-500 mt-1">APP-2026-003</p>
+                            </div>
+                            <span
+                                class="text-xs font-semibold border border-gray-300 px-3 py-2 rounded-full w-fit">Under
+                                Review</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
