@@ -1,26 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <main  class="p-4 border border-gray-300 rounded-2xl min-h-screen w-full bg-white">
-          <nav
-            class="flex justify-between items-center border border-gray-300 rounded-xl px-5 md:px-8 py-4 min-h-16 bg-white">
+
+<body class="bg-white text-black md:p-3 p-1">
+    <main class="p-4 border border-gray-300 rounded-2xl min-h-screen w-full bg-white">
+        <nav
+            class="sticky top-0 z-50 flex justify-between items-center  border border-gray-300 rounded-xl px-2 md:px-8 md:py-4 py-2 min-h-16 bg-white/50">
             <div>
-                <div class="font-bold text-2xl tracking-tight">StudentPortal</div>
+                <div class="font-bold md:text-2xl text-xl tracking-tight">StudentPortal</div>
                 <div class="text-sm text-gray-600 mt-1">
                     Your Academic Journey, Simplified.
                 </div>
             </div>
 
-            <div class="border border-gray-300 p-1 rounded-full">
-                <img src="/assects/profileLogo.png" class="w-9 h-9 rounded-full object-cover" alt="profileLogo">
+            <div class="">
+                <img src="/assects/profileLogo.png"
+                    class="w-9 h-9 md:border border-gray-300 p-1 rounded-full object-cover hidden md:block"
+                    alt="profileLogo">
+                <button aria-label="Open navigation menu " id="menuBtn"
+                    class="absolute top-1 right-3 md:hidden block text-2xl">&#9776;</button>
             </div>
         </nav>
+        <section class=" flex flex-col md:flex-row gap-4 my-4 w-full">
+            <div id="sidebar" class="fixed top-[50%] h-60vh  left-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[80%]  rounded-xl shadow-lg
+            opacity-0 invisible
+            transition-all duration-300 ease-in-out
+            md:static md:translate-x-0 md:translate-y-0
+            md:opacity-100 md:visible  md:shadow-none md:border border-gray-300 md:top-0 flex-col md:flex
+                 md:w-[20%] gap-2 p-3   md:rounded-xl bg-white">
+
+
+                <h2 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-2 py-2">Menu</h2>
+                <a href="/" class="py-3 rounded-lg px-3  font-semibold">▦ &nbsp; Dashboard</a>
+                <h4 class="py-3 rounded-lg px-3 border border-gray-300 text-gray-700">▤ &nbsp; My Application</h4>
+                <h4 class="py-3 rounded-lg px-3 text-gray-700">▧ &nbsp; Documents</h4>
+                <h4 class="py-3 rounded-lg px-3 text-gray-700">♙ &nbsp; Profile</h4>
+                <h4 class="py-3  rounded-lg px-3 text-gray-700">↪ &nbsp; Logout</h4>
+            </div>
+
+            <div class="personal flex flex-col w-full">
+
+                <!-- Header -->
+                <header class="mb-8 p-4 border border-gray-300 rounded-xl">
+                    <p class="text-sm text-gray-500 mb-2">Student Portal / Application</p>
+                    <h1 class="sm:text-3xl text-2xl font-semibold">Student Application</h1>
+                    <p class="text-gray-500 mt-2">
+                        Enter your personal information to get started.
+                    </p>
+                </header>
+
+                <!-- Progress -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="h-1.5 flex-1 rounded-full bg-gray-900"></div>
+                    <div class="h-1.5 flex-1 rounded-full bg-gray-200"></div>
+                    <div class="h-1.5 flex-1 rounded-full bg-gray-200"></div>
+                </div>
+
+                <!-- Form Card -->
+                <form id="personalForm" class="bg-white border border-gray-200 rounded-xl p-4 md:p-4">
+
+                    <div class="mb-7">
+                        <h2 class="text-xl font-semibold">Personal Information</h2>
+                        <p class="text-sm text-gray-500 mt-1">
+                            Fields marked with * are required.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- Full Name -->
+                        <div>
+                            <label for="fullname" class="block text-sm font-medium mb-2">
+                                Full Name *
+                            </label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required
+                                autocomplete="name"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div>
+                            <label for="dob" class="block text-sm font-medium mb-2">
+                                Date of Birth *
+                            </label>
+                            <input type="date" id="dob" name="dob" required autocomplete="bday"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- Gender -->
+                        <div>
+                            <label for="gender" class="block text-sm font-medium mb-2">
+                                Gender
+                            </label>
+                            <select id="gender" name="gender"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white outline-none focus:border-gray-900">
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">
+                                Mobile Number *
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number"
+                                pattern="[0-9]{10}" maxlength="10" inputmode="numeric" autocomplete="tel" required
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="md:col-span-2">
+                            <label for="email" class="block text-sm font-medium mb-2">
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com"
+                                autocomplete="email" required
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="md:col-span-2">
+                            <label for="address" class="block text-sm font-medium mb-2">
+                                Full Address *
+                            </label>
+                            <textarea id="address" name="address" rows="3" placeholder="House number, street, locality"
+                                autocomplete="street-address" required
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900"></textarea>
+                        </div>
+
+                        <!-- City -->
+                        <div>
+                            <label for="city" class="block text-sm font-medium mb-2">
+                                City *
+                            </label>
+                            <input type="text" id="city" name="city" placeholder="Enter city" required
+                                autocomplete="address-level2"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- State -->
+                        <div>
+                            <label for="state" class="block text-sm font-medium mb-2">
+                                State *
+                            </label>
+                            <input type="text" id="state" name="state" placeholder="Enter state" required
+                                autocomplete="address-level1"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                        <!-- PIN Code -->
+                        <div>
+                            <label for="pincode" class="block text-sm font-medium mb-2">
+                                PIN Code *
+                            </label>
+                            <input type="text" id="pincode" name="pincode" placeholder="6-digit PIN code"
+                                pattern="[0-9]{6}" maxlength="6" inputmode="numeric" autocomplete="postal-code" required
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900">
+                        </div>
+
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex justify-end mt-8 pt-6 border-t border-gray-200">
+                        <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium">
+                            Save & Continue →
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
     </main>
+    <script src="/js/script.js"></script>
 </body>
+
 </html>
