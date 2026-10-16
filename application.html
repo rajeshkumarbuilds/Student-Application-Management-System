@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StudentPortal | Application</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="bg-white text-black md:p-3 p-1">
-    <main class="p-4 border border-gray-300 rounded-2xl min-h-screen w-full bg-white">
+    <main class="md:p-4 p-2 border border-gray-300 rounded-2xl min-h-screen w-full bg-white">
         <nav
             class="sticky top-0 z-50 flex justify-between items-center  border border-gray-300 rounded-xl px-2 md:px-8 md:py-4 py-2 min-h-16 bg-white/50">
             <div>
@@ -28,24 +28,32 @@
             </div>
         </nav>
         <section class=" flex flex-col md:flex-row gap-4 my-4 w-full">
-            <div id="sidebar" class="fixed top-[50%] h-60vh  left-1/2 -translate-x-1/2 -translate-y-1/2
-            w-[80%]  rounded-xl shadow-lg
+            <div id="sidebar" class="fixed top-[55%] min-h-65vh  left-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[80%]   rounded-xl shadow-lg
             opacity-0 invisible
             transition-all duration-300 ease-in-out
             md:static md:translate-x-0 md:translate-y-0
             md:opacity-100 md:visible  md:shadow-none md:border border-gray-300 md:top-0 flex-col md:flex
-                 md:w-[20%] gap-2 p-3   md:rounded-xl bg-white">
+                md:w-[25%] xl:w-[20%] gap-2 p-3   md:rounded-xl bg-white">
 
 
-                <h2 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-2 py-2">Menu</h2>
-                <a href="/" class="py-3 rounded-lg px-3  font-semibold">▦ &nbsp; Dashboard</a>
-                <h4 class="py-3 rounded-lg px-3 border border-gray-300 text-gray-700">▤ &nbsp; My Application</h4>
-                <h4 class="py-3 rounded-lg px-3 text-gray-700">▧ &nbsp; Documents</h4>
-                <h4 class="py-3 rounded-lg px-3 text-gray-700">♙ &nbsp; Profile</h4>
-                <h4 class="py-3  rounded-lg px-3 text-gray-700">↪ &nbsp; Logout</h4>
+                <h2 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-2 pb-1">Menu</h2>
+                <h4 class="md:py-3  py-1.5 rounded-lg lg:px-3 px-1.5  border-gray-300 font-semibold">▦ &nbsp;
+                    Dashboard</h4>
+                <h4 class="md:py-3 py-1.5 border border-gray-300 rounded-lg lg:px-3 px-1.5 text-gray-700">▤ &nbsp; My Application</h4>
+                <h4 class="md:py-3 py-1.5 rounded-lg lg:px-3 px-1.5 text-gray-700">▧ &nbsp; Documents</h4>
+                <h4 class="md:py-3 py-1.5 rounded-lg lg:px-3 px-1.5 text-gray-700">♙ &nbsp; Profile</h4>
+                <h4 class="md:py-3 pt-1.5 pb-3 rounded-lg lg:px-3 px-1.5 text-gray-700">↪ &nbsp; Logout</h4>
+
+
+
+
+                 <!-- <a href="/application.html"
+                    class=" rounded-lg lg:text-xl text-[1rem] bg-blue-300 text-white lg:px-4 lg:py-3 px-2 py-1.5 mx-auto">
+                    + New Application</a> -->
             </div>
 
-            <div class="personal flex flex-col w-full">
+            <div class="personal flex flex-col min-w-0 flex-1 ">
 
                 <!-- Header -->
                 <header class="mb-8 p-4 border border-gray-300 rounded-xl">
@@ -173,9 +181,10 @@
 
                     <!-- Actions -->
                     <div class="flex justify-end mt-8 pt-6 border-t border-gray-200">
-                        <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium">
-                            Save & Continue →
-                        </button>
+                        <button type="submit"
+                            class="bg-blue-400 cursor-pointer text-white px-6 py-3 rounded-lg font-medium">
+                           <a href="/education.html" class="">Save & Continue →</a> 
+                    </a>
                     </div>
 
                 </form>
